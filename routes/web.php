@@ -54,22 +54,17 @@ Route::get('/news', function () {
     return view('guest.news');
 })->name('news');
 
-Route::get('/home/{id}', function($id){
-    $comics = collect(config('comics'));
-    
-    // @@@@ tentativo 1
-    // $selectedProdutcs = $paste->where('id',  $id);
-    // if ($paste->count() === 1){
-    //     selectedProduct = array_values	($selectedProducts->all()[0]);
-    // } else {
-    //     abort(404)
-    // }
-    
-    $selectedComic = $comics->firstwhere('id', $id);
-    if(!$selectedComic) abort(404)
+//ROUTE PER COMIC
 
-    return view('guest.comic', [
-        'title' => $selectComic['title'] . 'DC'
-        'product' => $selectedComic
-    ]);
-    })->name('comic');
+Route::get('/comic/{id}', function($id){
+    $comics = collect(config('comics'));
+
+    $selectedComic = $comics->firstWhere('id', $id);
+    if( $selectedComic === null ) abort(404);
+    
+    $dataComic = [
+        'selectedComics' => $selectedComic
+    ];
+    
+    return view('guest.comic', $dataComic);
+})->name('comic');
