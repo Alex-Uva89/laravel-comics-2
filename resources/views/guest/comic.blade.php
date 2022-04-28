@@ -4,17 +4,27 @@
 
 @section('content')
     <div class="container-comic">
-        <h3>{{$selectedComics['title']}} titolo</h3>
-        <img src="{{$selectedComics['thumb']}}" alt="{{$selectedComics['title']}} img">
-        <div>{{$selectedComics['price']}} prezzo</div>
-        <p>{{$selectedComics['description']}}</p>
-        <div>{{$selectedComics['series']}}</div>
-        <div>{{$selectedComics['sale_date']}}</div>
-        <div>{{$selectedComics['type']}}</div>
         <div>
-            @foreach ($selectedComics['artists'] as $artist)
-                {{$artist}} ,
-            @endforeach
+            <h3>{{$selectedComics['title']}} titolo</h3>
+            <img src="{{$selectedComics['thumb']}}" class="img-position" alt="{{$selectedComics['title']}} img">
+            <div class="price"> USD Price: {{$selectedComics['price']}} prezzo</div>
+            <div class="info-box">
+                <div>Serie: {{$selectedComics['series']}}</div>
+                <div>Data di pubblicazione:{{$selectedComics['sale_date']}}</div>
+                <div>Tipologia: {{$selectedComics['type']}}</div>
+                <div>
+                    Disegnato da: 
+                    @foreach ($selectedComics['artists'] as $artist)
+                    {{$artist}} ,
+                    @endforeach
+                </div>
+            </div> 
+    
+            <p>{{$selectedComics['description']}}</p>
+            
+        </div>
+        <div class="pub-box">
+            <img src="/images/pub.jpg" alt="">
         </div>
     </div>
 @endsection

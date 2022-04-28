@@ -204,5 +204,46 @@ a {
 }
 
 .container-comic {
+  display: flex;
+  width: 800px;
+  padding: 1rem;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin: 3rem auto;
   color: black;
+  position: relative;
+  border: 1px solid black;
+}
+.container-comic img {
+  border: 1px solid black;
+}
+.container-comic h3 {
+  text-transform: uppercase;
+}
+.container-comic p {
+  width: 95%;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+.container-comic .img-position {
+  width: 15%;
+  position: absolute;
+  bottom: 110%;
+}
+.container-comic .price {
+  width: 95%;
+  margin: 1rem 0;
+  padding: 0.5rem 2rem;
+  background-color: greenyellow;
+  border: 1px solid black;
+}
+.container-comic .info-box {
+  width: 95%;
+  padding: 0.5rem;
+  border: 1px solid black;
+}
+.container-comic .pub-box {
+  align-self: center;
 }

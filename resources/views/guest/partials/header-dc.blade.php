@@ -1,7 +1,7 @@
 <header>
     <div class="front">dc power</div>
     <div class="container-header">
-        <img alt="Dc logo" src="/images/dc-logo.png">
+        <img alt="Dc logo" src="{{ asset('/images/dc-logo.png') }}">
         <ul class="navbar">
             {{-- @foreach ($collection as $item)
               <li><a href=""{{ route::currentRouteName() == $menuItem['route'] ? 'active' : '' }}"> 
